@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="openbernala.list">
+      <field name="name">openbernala list</field>
+      <field name="model">openbernala.openbernala</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="openbernala.action_window">
+      <field name="name">openbernala window</field>
+      <field name="res_model">openbernala.openbernala</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="openbernala.action_server">
+      <field name="name">openbernala server</field>
+      <field name="model_id" ref="model_openbernala_openbernala"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="openbernala" id="openbernala.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="openbernala.menu_1" parent="openbernala.menu_root"/>
+    <menuitem name="Menu 2" id="openbernala.menu_2" parent="openbernala.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="openbernala.menu_1_list" parent="openbernala.menu_1"
+              action="openbernala.action_window"/>
+    <menuitem name="Server to list" id="openbernala" parent="openbernala.menu_2"
+              action="openbernala.action_server"/>
+-->
+  </data>
+</odoo>
