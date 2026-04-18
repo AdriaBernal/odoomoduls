@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_openbernala_openbernala,openbernala.openbernala,model_openbernala_openbernala,base.group_user,1,1,1,1
+access_openbernala_curs,access_openbernala_curs,model_openbernala_curs,base.group_user,1,1,1,1
+access_openbernala_materia,access_openbernala_materia,model_openbernala_materia,base.group_user,1,1,1,1
+access_openbernala_professor,access_openbernala_professor,model_openbernala_professor,base.group_user,1,1,1,1

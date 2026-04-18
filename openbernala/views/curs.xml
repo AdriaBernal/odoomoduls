@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="openbernala_action_window_curs" model="ir.actions.act_window">
+            <field name="name">Llistat de Cursos</field>
+            <field name="res_model">openbernala.curs</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            name="Llistat de Cursos"
+            id="openbernala_menu_list_curs"
+            parent="openbernala_menu_root"
+            action="openbernala_action_window_curs"
+        />
+    </data>
+</odoo>

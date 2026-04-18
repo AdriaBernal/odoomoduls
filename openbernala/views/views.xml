@@ -41,20 +41,16 @@
 -->
 
     <!-- Top menu item -->
-<!--
     <menuitem name="openbernala" id="openbernala.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="openbernala.menu_1" parent="openbernala.menu_root"/>
-    <menuitem name="Menu 2" id="openbernala.menu_2" parent="openbernala.menu_root"/>
--->
+    <menuitem name="Gestió" id="openbernala.menu" parent="openbernala.menu_root"/>
+    <!--<menuitem name="Menu 2" id="openbernala.menu_2" parent="openbernala.menu_root"/>-->
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="openbernala.menu_1_list" parent="openbernala.menu_1"
+    <menuitem name="List" id="openbernala.menu_list" parent="openbernala.menu"
               action="openbernala.action_window"/>
-    <menuitem name="Server to list" id="openbernala" parent="openbernala.menu_2"
-              action="openbernala.action_server"/>
--->
+    <!--<menuitem name="Server to list" id="openbernala" parent="openbernala.menu_2"
+              action="openbernala.action_server"/>-->
   </data>
 </odoo>

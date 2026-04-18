@@ -26,6 +26,7 @@ Long description of module's purpose
         'views/views.xml',
         'views/curs.xml',
         'views/materia.xml',
+        'views/professor.xml',
         ###'views/templates.xml',
     ],
 

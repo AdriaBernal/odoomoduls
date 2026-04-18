@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="openbernala_action_window_professor">
+            <field name="name">Llista de professors</field>
+            <field name="res_model">openbernala.professor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="openbernala_menu_professor"
+            name="Professors"
+            parent="openbernala_menu_root"
+            action="openbernala_action_window_professor"
+        />
+    </data>
+</odoo>
