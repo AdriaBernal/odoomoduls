@@ -1,15 +1,52 @@
 <odoo>
     <data>
+
+        <!-- Vista llista de cursos -->
+        <record id="openbernala_curs_view_tree" model="ir.ui.view">
+            <field name="name">openbernala.curs.tree</field>
+            <field name="model">openbernala.curs</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="nivell"/>
+                    <field name="num_alumnes"/>
+                    <field name="total_alumnes_materies"/>
+                    <field name="inici_curs"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Vista formulari de cursos -->
+        <record id="openbernala_curs_view_form" model="ir.ui.view">
+            <field name="name">openbernala.curs.form</field>
+            <field name="model">openbernala.curs</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="nivell"/>
+                            <field name="num_alumnes"/>
+                            <field name="total_alumnes_materies" readonly="1"/>
+                            <field name="inici_curs"/>
+                            <field name="materia_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <record id="openbernala_action_window_curs" model="ir.actions.act_window">
             <field name="name">Llistat de Cursos</field>
             <field name="res_model">openbernala.curs</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" ref="openbernala_curs_view_tree"/>
         </record>
 
         <menuitem 
             name="Llistat de Cursos"
             id="openbernala_menu_list_curs"
-            parent="openbernala_menu_root"
+            parent=""
             action="openbernala_action_window_curs"
         />
     </data>

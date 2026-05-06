@@ -4,13 +4,13 @@
         <record id="openbernala_action_window_materia" model="ir.actions.act_window">
             <field name="name">Llistat de Matèries</field>
             <field name="res_model">openbernala.materia</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <menuitem
             name="Llistat de Matèries"
             id="openbernala_menu_list_materia"
-            parent="openbernala_menu_root"
+            parent=""
             action="openbernala_action_window_materia"
         />
     </data>

@@ -4,13 +4,13 @@
         <record model="ir.actions.act_window" id="openbernala_action_window_professor">
             <field name="name">Llista de professors</field>
             <field name="res_model">openbernala.professor</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <menuitem 
             id="openbernala_menu_professor"
             name="Professors"
-            parent="openbernala_menu_root"
+            parent=""
             action="openbernala_action_window_professor"
         />
     </data>

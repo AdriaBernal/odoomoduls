@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from odoo import models, fields
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
@@ -14,7 +13,7 @@ class Materia(models.Model):
 
     num_alumnes = fields.Integer(string = 'Número d\'alumnes')
 
-    curs_ids = fields.Many2one(
+    curs_id = fields.Many2many(
         'openbernala.curs',
         string = 'Curs',
         ondelete = 'cascade'
@@ -25,8 +24,18 @@ class Materia(models.Model):
         string='Professors'
     )
 
+    total_alumnes = fields.Integer(
+        string='Total d\'alumnes',
+        compute='_compute_total_alumnes',
+    )
+
     @api.constrains('num_alumnes')
     def _check_num_alumnes(self):
         for record in self:
             if record.num_alumnes < 0:
                 raise ValidationError('El número d\'alumnes no pot ser negatiu.')
+            
+    @api.constrains('name')
+    def _check_name(self):
+        for record in self:
+            record.total_alumnes_materies = num_alumnes
