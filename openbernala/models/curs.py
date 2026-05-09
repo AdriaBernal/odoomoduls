@@ -21,18 +21,18 @@ class Curs(models.Model):
 
     num_alumnes = fields.Integer(string = 'Nombre d\'alumnes')
 
-    total_alumnes_materies = fields.Integer(
-        string = 'Total d\'alumnes (Matèries)',
-        compute = '_compute_total_alumnes_materies',
-        store=True
-    )
-
     inici_curs = fields.Date(string = 'Inici del curs')
 
     materia_ids = fields.Many2many(
         'openbernala.materia',
         'curs_id',
         string = 'Matèries'
+    )
+
+    total_alumnes_materies = fields.Integer(
+        string = 'Total d\'alumnes (Matèries)',
+        compute = '_compute_total_alumnes_materies',
+        store=True
     )
 
     @api.depends('materia_ids.num_alumnes')

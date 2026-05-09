@@ -7,10 +7,67 @@
             <field name="view_mode">list,form</field>
         </record>
 
+        <record id="view_professor_list" model="ir.ui.view">
+            <field name="name">openbernala.professor.list</field>
+            <field name="model">openbernala.professor</field>
+            <field name="arch" type="xml">
+                <list decoration-danger="baixa==True">
+                    <field name="display_name"/>
+                    <field name="email"/>
+                    <field name="telefon"/>
+                    <field name="baixa"/>
+                    <field name="materia_ids" widget="many2many_tags"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_professor_form" model="ir.ui.view">
+            <field name="name">professor.form</field>
+            <field name="model">openbernala.professor</field>
+            <field name="arch" type="xml">
+                <form>
+                <sheet>
+                    <header>
+                        <button name="action_baixa"
+                            type="object"
+                            string="Professor Baixa"
+                            invisible="baixa == True"/>
+
+                        <button name="action_alta"
+                            type="object"
+                            string="Professor Alta"
+                            invisible="baixa == False"/>
+                    </header>
+                    <group>
+                        <group string="Dades Personals">
+                            <field name="name"/>
+                            <field name="cognoms"/>
+                        </group>
+                        <group string="Dades de Contacte">
+                            <field name="telefon"/>
+                            <field name="email"/>
+                            <field name="baixa"/>
+                        </group>
+                    </group>
+                        <notebook>
+                            <page string="Matèries">
+                                <field name="materia_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                        <field name="num_alumnes"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <menuitem 
             id="openbernala_menu_professor"
-            name="Professors"
-            parent=""
+            name="Llistat de Professors"
             action="openbernala_action_window_professor"
         />
     </data>

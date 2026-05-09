@@ -35,7 +35,7 @@ class Materia(models.Model):
             if record.num_alumnes < 0:
                 raise ValidationError('El número d\'alumnes no pot ser negatiu.')
             
-    @api.constrains('name')
-    def _check_name(self):
+    @api.depends('num_alumnes')
+    def _compute_total_alumnes(self):
         for record in self:
-            record.total_alumnes_materies = num_alumnes
+            record.total_alumnes = record.num_alumnes
